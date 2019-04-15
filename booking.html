@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="ru" class="page--booking">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="stylesheet" href="./css/style.main-bundle.css" />
+
+    <title>Booking | Nowescape 2.0</title>
+
+    <style>
+      #booking-confirmation-section {
+        z-index: 2 !important;
+      }
+      #booking-confirmation-section:after {
+        position: absolute;
+        top:0;
+        left:0;
+        height: 100%;
+        width: 100%;
+        z-index: 1 !important;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="c-header">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
+          <a class="d-md-none" data-toggle="modal" data-target="#xsMenuModal">
+            <img src="./img/icons/burger-menu.svg" alt="open" />
+          </a>
+          <a class="navbar-brand" href="#"
+            ><img src="./img/icons/logo.svg" alt="logo"
+          /></a>
+          <a href="#" class="d-md-none"
+            ><img src="./img/icons/user.svg" alt="user"
+          /></a>
+
+          <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown3"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <img src="./img/icons/phone-call.svg" width="14px" alt="" />
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                  <h3 class="dropdown-header mb-2">
+                    Contact us
+                    <span class="close"
+                      ><img src="./img/icons/cross.svg" alt=""
+                    /></span>
+                    <p class="text-gray mb-0">
+                      Looking for a quick answer?
+                      <a href="#" class="link -underline-none">Check our FAQ</a>
+                    </p>
+                  </h3>
+                  <div class="dropdown-content text-center" href="#">
+                    <button
+                      type="button"
+                      class="btn btn-outline-secondary btn-lg"
+                      data-toggle="modal"
+                      data-target="#sendEmailModal"
+                    >
+                      Send an email
+                    </button>
+                  </div>
+                  <div class="dropdown-divider -text"><span>or</span></div>
+                  <div class="dropdown-content text-center">
+                    <a href="#" class="btn btn-link btn-lg py-0">
+                      <span class="sr-only">Send an email</span>
+                      <img
+                        src="./img/temporary-btn-placeholder.png"
+                        height="48px"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div class="dropdown-divider -text"><span>or</span></div>
+                  <div class="dropdown-content text-center">
+                    <p class="text-gray mb-3">
+                      Call
+                    </p>
+                    <a href="#" class="link -lg -underline-none"
+                      >+44 (0) 203 6950 999</a
+                    >
+                    <p class="text-gray mb-4 mt-3 pb-3">
+                      Mon - Fri 10:00am - 6:00pm
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown2"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  &euro;
+                </a>
+                <div
+                  class="dropdown-menu dropdown-menu-right"
+                  aria-labelledby="navbarDropdown2"
+                >
+                  <h3 class="dropdown-header">
+                    Select currency
+                    <span class="close"
+                      ><img src="./img/icons/cross.svg" alt=""
+                    /></span>
+                  </h3>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item active" href="#"
+                    >Colombian peso - $</a
+                  >
+                  <a class="dropdown-item" href="#">Euro - €</a>
+                  <a class="dropdown-item" href="#">Australian Dollar - $</a>
+                  <a class="dropdown-item" href="#">Euro - €</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="./img/icons/uk.png"
+                    width="20px"
+                    class="mb-1"
+                    alt=""
+                  />
+                </a>
+                <div
+                  class="dropdown-menu dropdown-menu-right"
+                  aria-labelledby="navbarDropdown"
+                >
+                  <h3 class="dropdown-header">
+                    Select your language
+                    <span class="close"
+                      ><img src="./img/icons/cross.svg" alt=""
+                    /></span>
+                  </h3>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item active" href="#"
+                    ><img src="./img/icons/uk.png" width="20px" alt="" />
+                    English</a
+                  >
+                  <a class="dropdown-item" href="#"
+                    ><img src="./img/icons/uk.png" width="20px" alt="" />
+                    Eesti</a
+                  >
+                  <a class="dropdown-item" href="#"
+                    ><img src="./img/icons/uk.png" width="20px" alt="" />
+                    Suomi</a
+                  >
+                  <a class="dropdown-item" href="#"
+                    ><img src="./img/icons/uk.png" width="20px" alt="" />
+                    Русский</a
+                  >
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Gift card</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                  data-toggle="modal"
+                  data-target="#signUpModal"
+                  >Sign up</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="#"
+                  data-toggle="modal"
+                  data-target="#signInModal"
+                  >Sign in</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div
+      class="modal fade"
+      id="signInModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="signInModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button
+              type="button"
+              class="close float-none mb-5 mb-sm-3 px-2 pt-2 pb-3"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <img src="./img/icons/cross.svg" alt="close" />
+            </button>
+            <a href="#" class="btn btn-fb btn-lg btn-block mb-4"
+              ><img src="./img/icons/facebook-logo.svg" class="mr-3" alt="" />
+              Log in with Facebook</a
+            >
+            <a href="#" class="btn btn-google btn-lg btn-block"
+              ><img src="./img/icons/search1.svg" class="mr-3" alt="" /> Log in
+              with Google</a
+            >
+            <div class="dropdown-divider -text"><span>or</span></div>
+            <form>
+              <div class="form-group input-group-icon -icon-right">
+                <input
+                  type="email"
+                  class="form-control form-control-lg"
+                  placeholder="Email"
+                />
+                <img
+                  src="./img/icons/email-input-icon.svg"
+                  class="input-icon"
+                  alt="icon"
+                />
+              </div>
+              <div class="form-group input-group-icon -icon-right">
+                <input
+                  type="password"
+                  class="form-control form-control-lg"
+                  placeholder="Password"
+                />
+                <img
+                  src="./img/icons/lock-input-icon.svg"
+                  class="input-icon"
+                  alt="icon"
+                />
+              </div>
+              <div class="form-row align-items-center mb-4">
+                <div class="col-6">
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="customCheck2"
+                      name="example2"
+                    />
+                    <label class="custom-control-label" for="customCheck2"
+                      >Remember me</label
+                    >
+                  </div>
+                </div>
+                <div class="col-6 text-right">
+                  <a href="#" class="link -underline-none">Show password</a>
+                </div>
+              </div>
+              <button
+                type="submit"
+                class="btn btn-primary btn-lg -text-lg btn-block text-nowrap mb-4"
+              >
+                Sign in
+              </button>
+            </form>
+            <p class="modal-title-block text-center mb-1">
+              <a href="#" class="link -underline-none">Forgot password?</a>
+            </p>
+            <div class="dropdown-divider mt-4 mb-4"></div>
+            <p class="modal-title-block text-center mb-0 mt-1">
+              Don’t have an account?
+              <a href="#" class="link -md -underline-none">Sign up</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="signUpModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="signUpModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button
+              type="button"
+              class="close float-none mb-5 mb-sm-3 px-2 pt-2 pb-3"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <img src="./img/icons/cross.svg" alt="close" />
+            </button>
+            <a href="#" class="btn btn-fb btn-lg btn-block mb-4"
+              ><img src="./img/icons/facebook-logo.svg" class="mr-3" alt="" />
+              Continue with Facebook</a
+            >
+            <a href="#" class="btn btn-google btn-lg btn-block"
+              ><img src="./img/icons/search1.svg" class="mr-3" alt="" /> Continue
+              with Google</a
+            >
+            <div class="dropdown-divider -text"><span>or</span></div>
+            <a
+              href="#"
+              class="btn btn-primary btn-lg -text-lg btn-block"
+              data-toggle="modal"
+              data-target="#signUpEmailModal"
+              ><img src="./img/icons/email.svg" class="mr-4" alt="" />Continue
+              with email</a
+            >
+            <div class="dropdown-divider"></div>
+            <p class="modal-title-block text-center mb-0">
+              Already have a Nowescape account?
+              <a href="#" class="link -md -underline-none">Log in</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="signUpEmailModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="signUpEmailModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button
+              type="button"
+              class="close mb-5 mb-sm-3 float-none"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <img src="./img/icons/cross.svg" alt="close" />
+            </button>
+            <p class="modal-title-block--sm text-center mb-0 pa-4">
+              Sign up with
+              <a href="#" class="link -underline-none"> Facebook</a>
+              or
+              <a href="#" class="link -underline-none"> Google</a>
+            </p>
+            <div class="dropdown-divider -text"><span>or</span></div>
+            <form>
+              <div class="form-group input-group-icon -icon-right">
+                <input
+                  type="email"
+                  class="form-control form-control-lg"
+                  placeholder="Email"
+                />
+                <img
+                  src="./img/icons/email-input-icon.svg"
+                  class="input-icon"
+                  alt="icon"
+                />
+              </div>
+              <div class="form-group input-group-icon -icon-right">
+                <input
+                  type="text"
+                  class="form-control form-control-lg"
+                  placeholder="Firstname"
+                />
+                <img
+                  src="./img/icons/user-input-icon.svg"
+                  class="input-icon"
+                  alt="icon"
+                />
+              </div>
+              <div class="form-group input-group-icon -icon-right">
+                <input
+                  type="text"
+                  class="form-control form-control-lg"
+                  placeholder="Lastname"
+                />
+                <img
+                  src="./img/icons/user-input-icon.svg"
+                  class="input-icon"
+                  alt="icon"
+                />
+              </div>
+              <div class="form-group input-group-icon -icon-right">
+                <input
+                  type="password"
+                  class="form-control form-control-lg"
+                  placeholder="Password"
+                />
+                <img
+                  src="./img/icons/lock-input-icon.svg"
+                  class="input-icon"
+                  alt="icon"
+                />
+              </div>
+              <p class="text-gray mb-4 pb-3">
+                We’ll send you marketing promotions, special offers and other
+                updates via email.
+              </p>
+              <button
+                type="submit"
+                class="btn btn-primary btn-lg -text-lg btn-block text-nowrap mb-4"
+              >
+                Sign up
+              </button>
+              <div class="custom-control custom-checkbox pt-2">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="customCheck"
+                  name="example1"
+                />
+                <label class="custom-control-label" for="customCheck"
+                  >I don’t want to receive marketing messages from Nowescape. I
+                  can also opt out of receiving these at any time in my account
+                  settings or via the link in the message.</label
+                >
+              </div>
+            </form>
+            <div class="dropdown-divider"></div>
+            <p
+              class="modal-title-block text-center d-flex d-md-block flex-column flex-sm-row mb-0"
+            >
+              Already have a Nowescape account?
+              <a href="#" class="link -md -underline-none">Log in</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="xsMenuModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="xsMenuModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body -height-auto">
+            <button
+              type="button"
+              class="close float-none px-2 py-2"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <img src="./img/icons/cross.svg" alt="close" />
+            </button>
+          </div>
+          <div class="modal-menu">
+            <a href="#" class="modal-menu__item">
+              Home
+            </a>
+            <a href="#" class="modal-menu__item">
+              Switch to business account
+              <img src="./img/icons/bag-icon.svg" class="ml-4" alt="" />
+            </a>
+            <div class="dropdown-divider my-3"></div>
+            <a
+              href="#"
+              class="modal-menu__item"
+              data-toggle="modal"
+              data-target="#languageModal"
+            >
+              Change Language
+              <b
+                ><img
+                  src="./img/icons/uk.png"
+                  class="mr-2"
+                  width="20px"
+                  alt=""
+                />English</b
+              >
+            </a>
+            <a
+              href="#"
+              class="modal-menu__item"
+              data-toggle="modal"
+              data-target="#currencyModal"
+            >
+              Change Currency
+              <b>€ EUR</b>
+            </a>
+            <div class="dropdown-divider my-3"></div>
+            <a href="#" class="modal-menu__item">
+              Buy a gift card
+              <img src="./img/icons/gift-icon.svg" class="ml-4" alt="" />
+            </a>
+            <a
+              href="#"
+              class="modal-menu__item"
+              data-toggle="modal"
+              data-target="#contactModal"
+            >
+              Contact us
+              <img
+                src="./img/icons/phone-call.svg"
+                width="26px"
+                class="ml-4"
+                alt=""
+              />
+            </a>
+            <a
+              href="#"
+              class="modal-menu__item"
+              data-toggle="modal"
+              data-target="#signUpModal"
+            >
+              Sign up
+              <img src="./img/icons/user.svg" width="26px" class="ml-4" alt="" />
+            </a>
+            <a
+              href="#"
+              class="modal-menu__item"
+              data-toggle="modal"
+              data-target="#signInModal"
+            >
+              Sign in
+              <img src="./img/icons/user.svg" width="26px" class="ml-4" alt="" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="languageModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="languageModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body -height-auto pb-0">
+            <span
+              class="close float-none"
+              data-dismiss="modal"
+              aria-label="Close"
+              ><img src="./img/icons/cross.svg" alt=""
+            /></span>
+            <h3 class="h3 my-5">Language modal</h3>
+            <div class="dropdown-divider my-0"></div>
+          </div>
+          <div class="modal-menu -lg">
+            <a href="#" class="modal-menu__item active">
+              <span
+                ><img
+                  src="./img/icons/uk.png"
+                  width="20px"
+                  class="mr-2"
+                  alt=""
+                />
+                English</span
+              >
+            </a>
+            <a href="#" class="modal-menu__item">
+              <span
+                ><img
+                  src="./img/icons/uk.png"
+                  width="20px"
+                  class="mr-2"
+                  alt=""
+                />
+                Suomi</span
+              >
+            </a>
+            <a href="#" class="modal-menu__item">
+              <span
+                ><img
+                  src="./img/icons/uk.png"
+                  width="20px"
+                  class="mr-2"
+                  alt=""
+                />
+                Eesti</span
+              >
+            </a>
+            <a href="#" class="modal-menu__item">
+              <span
+                ><img
+                  src="./img/icons/uk.png"
+                  width="20px"
+                  class="mr-2"
+                  alt=""
+                />
+                Русский</span
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="currencyModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="currencyModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body -height-auto pb-0">
+            <span
+              class="close float-none"
+              data-dismiss="modal"
+              aria-label="Close"
+              ><img src="./img/icons/cross.svg" alt=""
+            /></span>
+            <h3 class="h3 my-5">Currency modal</h3>
+            <div class="dropdown-divider my-0"></div>
+          </div>
+          <div class="modal-menu -lg">
+            <a href="#" class="modal-menu__item active">
+              Australian Dollar - $
+            </a>
+            <a href="#" class="modal-menu__item">
+              Colombian peso - $
+            </a>
+            <a href="#" class="modal-menu__item">
+              Euro - €
+            </a>
+            <a href="#" class="modal-menu__item">
+              Euro - €
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="sendEmailModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="sendEmailModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button
+              type="button"
+              class="close mb-5 float-none d-block d-sm-none"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <img src="./img/icons/cross.svg" alt="close" />
+            </button>
+            <h3 class="h3 mb-5">Send us an email</h3>
+            <form>
+              <div class="form-group mb-5">
+                <label>
+                  Email
+                  <p class="font-light mt-3 mb-0">
+                    We will reply to this email address
+                  </p>
+                </label>
+                <div class="input-group-icon -icon-right -sm-gup mb-0">
+                  <input type="email" class="form-control form-control-lg" />
+                  <img
+                    src="./img/icons/email-input-icon.svg"
+                    class="input-icon"
+                    alt="close"
+                  />
+                </div>
+              </div>
+              <div class="form-group mb-4 mb-sm-5">
+                <label>Your message</label>
+                <textarea
+                  class="form-control form-control-lg"
+                  placeholder="Your message"
+                ></textarea>
+              </div>
+              <div class="d-flex align-items-center justify-content-between">
+                <a
+                  href="#"
+                  class="link -underline-none d-none d-sm-inline-flex"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                  >Back</a
+                >
+                <button
+                  type="submit"
+                  class="btn btn-outline-secondary btn-lg d-block d-sm-inline-flex"
+                >
+                  Send
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="contactModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="contactModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <span
+              class="close float-none"
+              data-dismiss="modal"
+              aria-label="Close"
+              ><img src="./img/icons/cross.svg" alt=""
+            /></span>
+            <h3 class="h3 mt-5 mb-3">
+              Contact us
+            </h3>
+            <p class="text-gray mb-5">
+              Looking for a quick answer?
+              <a href="#" class="link -underline-none">Check our FAQ</a>
+            </p>
+            <div class="text-center">
+              <button
+                type="button"
+                class="btn btn-outline-secondary btn-lg btn-block"
+                data-toggle="modal"
+                data-target="#sendEmailModal"
+              >
+                Send an email
+              </button>
+            </div>
+            <div class="dropdown-divider -text"><span>or</span></div>
+            <div class="dropdown-content text-center">
+              <a href="#" class="btn btn-link btn-lg py-0">
+                <span class="sr-only">Send an email</span>
+                <img
+                  src="./img/temporary-btn-placeholder.png"
+                  height="48px"
+                  alt=""
+                />
+              </a>
+            </div>
+            <div class="dropdown-divider -text"><span>or</span></div>
+            <div class="dropdown-content text-center">
+              <p class="text-gray">
+                Call
+              </p>
+              <a href="#" class="link -lg -underline-none"
+                >+44 (0) 203 6950 999</a
+              >
+              <p class="text-gray mb-4 mt-3 pb-3">
+                Mon - Fri 10:00am - 6:00pm
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <section id="booking-confirmation-section" class="pb-5">
+        <div class="container">
+          <img
+            src="./img/icons/booking-logo.svg"
+            class="booking-logo"
+            alt="booking-logo"
+          />
+          <h1 class="h2 text-white">Your booking has been confirmed</h1>
+          <h2 class="h4 text-white">
+            We have sent the detailed confirmation to your email. You can now
+            share this booking with other players.<br />
+            We’ll email them the booking, including the address, directions and
+            starting time
+          </h2>
+          <div class="mb-4 pb-3">
+            <a
+              href="#"
+              class="btn btn-light btn-lg -text-lg"
+              data-toggle="modal"
+              data-target="#invitePlayersModal"
+              >Invite players</a
+            >
+          </div>
+          <div class="bg-dark-default">
+            <a
+              href="#"
+              class="btn btn-outline-light btn-lg show-bookings"
+              id="show-bookings"
+              >Next</a
+            >
+          </div>
+        </div>
+      </section>
+      <section id="booking-main-section">
+        <div class="container">
+          <h3 class="h4 mt-4 mt-sm-5 pt-sm-3 mb-4 pb-3">
+            Upcoming plans
+            <p class="info-message p -lg mt-3 mb-0">
+              You have no upcoming bookings.
+            </p>
+          </h3>
+          <div class="row scrollable-area cards-area-h150">
+            <div class="col-6 col-md-3">
+              <div class="card custom-card">
+                <div
+                  class="card-img-wrap"
+                  style="background-image: url(./img/Bitmap2.png);"
+                ></div>
+                <div class="card-body">
+                  <h5 class="card-title">ESCAPE ROOM · LONDON</h5>
+                  <h6 class="card-subtitle">
+                    Escape the Lost Pyramid... Set in the world of Assassin's
+                    Creed…
+                  </h6>
+                  <p class="card-text mb-0">
+                    €12 per person
+                  </p>
+                  <div class="rates">
+                    <span class="rates__rate">
+                      <img src="./img/icons/star.svg" alt="star" />
+                      4.84
+                    </span>
+                    <span class="rates__amount">12</span>
+                  </div>
+                </div>
+                <a
+                  href="#"
+                  class="btn btn-outline-secondary btn-lg btn-block d-lg-inline-flex"
+                  data-toggle="modal"
+                  data-target="#invitePlayersModal"
+                  >Invite players</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <h3 class="h4 mt-3 pt-sm-3 mb-4 pb-3">Where you've been</h3>
+          <div class="row scrollable-area cards-area-h150">
+            <div class="col-6 col-md-3">
+              <div class="card custom-card">
+                <div
+                  class="card-img-wrap"
+                  style="background-image: url(./img/bitmap1.png);"
+                ></div>
+                <div class="card-body">
+                  <h5 class="card-title">ESCAPE ROOM · LONDON</h5>
+                  <h6 class="card-subtitle">
+                    Escape the Lost Pyramid... Set in the world of Assassin's
+                    Creed…
+                  </h6>
+                  <p class="card-text mb-0">
+                    €12 per person
+                  </p>
+                </div>
+                <a
+                  href="#"
+                  class="btn btn-outline-secondary btn-lg btn-block d-lg-inline-block"
+                  data-toggle="modal"
+                  data-target="#bookingConfirmationModal"
+                  >Add a review</a
+                >
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="card custom-card">
+                <div
+                  class="card-img-wrap"
+                  style="background-image: url(./img/bitmap1.png);"
+                ></div>
+                <div class="card-body">
+                  <h5 class="card-title">ESCAPE ROOM · LONDON</h5>
+                  <h6 class="card-subtitle">
+                    Escape the Lost Pyramid... Set in the world of Assassin's
+                    Creed…
+                  </h6>
+                  <p class="card-text mb-0">
+                    €12 per person
+                  </p>
+                </div>
+                <a
+                  href="#"
+                  class="btn btn-outline-secondary btn-lg btn-block d-lg-none"
+                  >Invite players</a
+                >
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="card custom-card">
+                <div
+                  class="card-img-wrap"
+                  style="background-image: url(./img/bitmap1.png);"
+                ></div>
+                <div class="card-body">
+                  <h5 class="card-title">ESCAPE ROOM · LONDON</h5>
+                  <h6 class="card-subtitle">
+                    Escape the Lost Pyramid... Set in the world of Assassin's
+                    Creed…
+                  </h6>
+                  <p class="card-text mb-0">
+                    €12 per person
+                  </p>
+                </div>
+                <a
+                  href="#"
+                  class="btn btn-outline-secondary btn-lg btn-block d-lg-none"
+                  >Invite players</a
+                >
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="card custom-card">
+                <div
+                  class="card-img-wrap"
+                  style="background-image: url(./img/bitmap1.png);"
+                ></div>
+                <div class="card-body">
+                  <h5 class="card-title">ESCAPE ROOM · LONDON</h5>
+                  <h6 class="card-subtitle">
+                    Escape the Lost Pyramid... Set in the world of Assassin's
+                    Creed…
+                  </h6>
+                  <p class="card-text mb-0">
+                    €12 per person
+                  </p>
+                </div>
+                <a
+                  href="#"
+                  class="btn btn-outline-secondary btn-lg btn-block d-lg-inline-block"
+                  >Invite players</a
+                >
+              </div>
+            </div>
+          </div>
+          <hr class="my-0 mt-md-3 mb-md-5" />
+          <div class="my-4">
+            <a
+              href="#"
+              class="link -bold -underline-none"
+              data-toggle="modal"
+              data-target="#cancelledItemsModal"
+              >Show cancelled items</a
+            >
+          </div>
+        </div>
+      </section>
+      <div
+        class="modal fade"
+        id="invitePlayersModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="invitePlayersModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <span
+                class="close float-none"
+                data-dismiss="modal"
+                aria-label="Close"
+                ><img src="./img/icons/angle-arrow-icon.svg" alt=""
+              /></span>
+              <h3 class="invite-players-title h3 mt-5 mb-3">
+                <input
+                  type="email"
+                  class="invite-players-input"
+                  placeholder="Email address"
+                />
+                <button class="btn btn-primary btn-circle">
+                  <img src="./img/icons/plus-icon.svg" alt="" />
+                </button>
+              </h3>
+              <div class="invited-players-list mb-5">
+                <div class="invited-players-list__item">
+                  <span class="invited-players-list__email"
+                    >name@example.com</span
+                  >
+                  <img
+                    src="./img/icons/cross.svg"
+                    class="invited-players-list__remove"
+                    alt=""
+                  />
+                </div>
+                <div class="invited-players-list__item">
+                  <span class="invited-players-list__email"
+                    >name@example.com</span
+                  >
+                  <img
+                    src="./img/icons/cross.svg"
+                    class="invited-players-list__remove"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <h4 class="h4 mb-4">Add your message</h4>
+              <div class="form-group">
+                <textarea
+                  class="form-control form-control-sm"
+                  placeholder="Where you meet, how can they pay you back"
+                  style="min-height: 7rem"
+                ></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a
+                href="#"
+                class="btn btn-primary btn-lg -text-lg"
+                data-toggle="modal"
+                data-target="#sharedBookingModal"
+              >
+                Send
+                <img
+                  src="./img/icons/angle-arrow-icon.svg"
+                  class="angle-arrow-icon -right ml-2"
+                  alt=""
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="sharedBookingModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="sharedBookingModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <span
+                class="close float-none"
+                data-dismiss="modal"
+                aria-label="Close"
+                ><img src="./img/icons/cross.svg" alt=""
+              /></span>
+              <h3 class="h3 mt-5 mb-4 pb-3">
+                The booking has been shared
+              </h3>
+              <h4 class="h4 mb-4">
+                We have sent the booking details to the following emails:
+              </h4>
+              <div class="invited-players-list mb-5">
+                <div class="invited-players-list__item">
+                  <span class="invited-players-list__email"
+                    >name@example.com</span
+                  >
+                </div>
+                <div class="invited-players-list__item">
+                  <span class="invited-players-list__email"
+                    >name@example.com</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a
+                data-dismiss="modal"
+                aria-label="Close"
+                class="btn btn-primary btn-lg -text-lg show-bookings"
+              >
+                Close
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="cancelledItemsModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="cancelledItemsModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <span
+                class="close float-none"
+                data-dismiss="modal"
+                aria-label="Close"
+                ><img src="./img/icons/cross.svg" alt=""
+              /></span>
+              <h4 class="h4 mt-5 mb-4 pb-3">Cancelled items</h4>
+              <div>
+                <div class="row scrollable-area cards-area-h150">
+                  <div class="col-6">
+                    <div class="card custom-card">
+                      <div
+                        class="card-img-wrap"
+                        style="background-image: url(./img/Bitmap2.png);"
+                      ></div>
+                      <div class="card-body">
+                        <h5 class="card-title status-cancelled">cancelled</h5>
+                        <h6 class="card-subtitle">
+                          Escape the Lost Pyramid... Set in the world of
+                          Assassin's Creed…
+                        </h6>
+                        <p class="card-text mb-0">
+                          €12 per person
+                        </p>
+                        <div class="rates">
+                          <span class="rates__rate">
+                            <img src="./img/icons/star.svg" alt="star" />
+                            4.84
+                          </span>
+                          <span class="rates__amount">12</span>
+                        </div>
+                      </div>
+                      <a
+                        href="#"
+                        class="btn btn-outline-secondary btn-lg btn-block d-lg-inline-block"
+                        >Invite players</a
+                      >
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="card custom-card">
+                      <div
+                        class="card-img-wrap"
+                        style="background-image: url(./img/Bitmap2.png);"
+                      ></div>
+                      <div class="card-body">
+                        <h5 class="card-title status-cancelled">cancelled</h5>
+                        <h6 class="card-subtitle">
+                          Escape the Lost Pyramid... Set in the world of
+                          Assassin's Creed…
+                        </h6>
+                        <p class="card-text mb-0">
+                          €12 per person
+                        </p>
+                        <div class="rates">
+                          <span class="rates__rate">
+                            <img src="./img/icons/star.svg" alt="star" />
+                            4.84
+                          </span>
+                          <span class="rates__amount">12</span>
+                        </div>
+                      </div>
+                      <a
+                        href="#"
+                        class="btn btn-outline-secondary btn-lg btn-block d-lg-inline-block"
+                        >Invite players</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade bookingConfirmationModal"
+        id="bookingConfirmationModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="bookingConfirmationModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="h5 modal-top mb-0">
+                <span
+                  class="close float-none"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                  ><img src="./img/icons/cross.svg" class="close-icon" alt=""
+                /></span>
+                Cancelled booking
+              </h3>
+            </div>
+            <div class="card custom-card">
+              <div
+                class="card-img-wrap"
+                style="background-image: url(./img/Bitmap3.png);"
+              ></div>
+              <div class="card-body">
+                <h5 class="card-title">
+                  ESCAPE ROOM <br />
+                  confirmed booking
+                </h5>
+                <h6 class="card-subtitle mb-4 pb-3">
+                  Escape the Lost Pyra. Set in the world of Assasian creed
+                </h6>
+                <div class="content-item">
+                  <h5 class="h5">Escape room</h5>
+                  <p>
+                    Operated by
+                    <a href="#" class="link -bold -underline-none"
+                      >London escape</a
+                    >
+                  </p>
+                </div>
+                <div class="content-item content-item__2col">
+                  <div>
+                    <h5 class="h5">Start time</h5>
+                    <p>
+                      4:45 PM<br />
+                      Tue, 26 Feb
+                    </p>
+                  </div>
+                  <div>
+                    <h5 class="h5">End time</h5>
+                    <p>
+                      7:45 PM<br />
+                      Tue, 26 Feb
+                    </p>
+                  </div>
+                </div>
+                <div class="content-item">
+                  <a href="#" class="room-link">
+                    <div class="room-link__img">
+                      <img src="./img/bitmap1.png" alt="" />
+                    </div>
+                    <div class="room-link__text">
+                      <h5 class="h5">End time</h5>
+                      <p>
+                        7:45 PM Tue, 26 Feb
+                      </p>
+                    </div>
+                    <svg
+                      width="14"
+                      height="24"
+                      class="room-link__icon"
+                      viewBox="0 0 14 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M13.348 10.8121L3.02836 0.492818C2.3719 -0.163953 1.30758 -0.163953 0.651441 0.492818C-0.00474727 1.14901 -0.00474718 2.21328 0.651441 2.86941L9.78273 12.0004L0.651708 21.1311C-0.00448004 21.7876 -0.00447994 22.8517 0.651708 23.5079C1.3079 24.1644 2.37217 24.1644 3.02862 23.5079L13.3483 13.1884C13.6764 12.8602 13.8402 12.4304 13.8402 12.0005C13.8402 11.5703 13.676 11.1402 13.348 10.8121Z"
+                        fill="#7F7E79"
+                      />
+                    </svg>
+                  </a>
+                </div>
+                <div class="content-item content-item__2col">
+                  <div>
+                    <h5 class="h5">Escape room</h5>
+                    <p>
+                      Operated by
+                      <a href="#" class="link -bold -underline-none"
+                        >London escape</a
+                      >
+                    </p>
+                  </div>
+                  <div>
+                    <div class="room-logo">
+                      <img src="./img/icons/room-avatar.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="content-item content-item__2col">
+                  <div>
+                    <h5 class="h5">Players</h5>
+                    <p>
+                      3-5
+                    </p>
+                  </div>
+                  <div>
+                    <h5 class="h5">Game lasts</h5>
+                    <p>
+                      60 min
+                    </p>
+                  </div>
+                </div>
+                <div class="content-item">
+                  <h5 class="h5">Confirmation code</h5>
+                  <p>
+                    RT68VNN78665
+                  </p>
+                </div>
+                <div class="content-item">
+                  <h5 class="h5">Total cost paid</h5>
+                  <p>
+                    35
+                  </p>
+                  <a href="#" class="link -bold -underline-none">Get receipt</a>
+                </div>
+                <div class="content-item">
+                  <h5 class="h5">Status</h5>
+                  <p>
+                    Cancelled on 7 May 4:53 PM by alexis.king@gmail.com
+                  </p>
+                </div>
+                <div class="content-item">
+                  <h5 class="h5">Cancellation terms</h5>
+                  <p>
+                    Full refund for cancellation done before 4 feb 4 PM and no
+                    refund after
+                  </p>
+                </div>
+                <div class="content-item">
+                  <h5 class="h5">Who's coming</h5>
+                  <p>
+                    3 players
+                  </p>
+                  <a href="#" class="link -bold -underline-none"
+                    >Invite two more players</a
+                  >
+                  <div class="players-list">
+                    <div class="players-list__item">
+                      <div class="player-logo">
+                        <img src="./img/icons/room-avatar.png" alt="" />
+                      </div>
+                      <h6 class="players-list__title">Aleksandr</h6>
+                    </div>
+                    <div class="players-list__item">
+                      <div class="player-logo">
+                        A
+                      </div>
+                      <h6 class="players-list__title">Aleksandr</h6>
+                    </div>
+                    <div class="players-list__item">
+                      <a href="#" class="player-logo">
+                        <img src="./img/icons/room-avatar.png" alt="" />
+                      </a>
+                      <h6 class="players-list__title">alexis.king@gmail.com</h6>
+                    </div>
+                    <div class="players-list__item">
+                      <div class="player-logo">
+                        <img src="./img/icons/room-avatar.png" alt="" />
+                      </div>
+                      <h6 class="players-list__title">Aleksandr</h6>
+                    </div>
+                    <div class="players-list__item">
+                      <a href="#" class="btn btn-primary btn-xxl btn-circle">
+                        <img src="./img/icons/plus-icon.svg" alt="" />
+                      </a>
+                      <h6 class="players-list__title">Invite</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="content-item">
+                  <h5 class="h5">Address</h5>
+                  <p class="p">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                  <img src="./img/bitmap-map.png" class="w-100 mt-3" alt="" />
+                </div>
+                <div class="content-item">
+                  <h5 class="h5">Directions</h5>
+                  <p class="p">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                </div>
+                <div class="content-item">
+                  <h5 class="h5">Contact details</h5>
+                  <p>
+                    Phone:
+                    <a href="#" class="link -underline-none">+372123456789</a>
+                  </p>
+                  <p>
+                    Email:
+                    <a href="#" class="link -underline-none"
+                      >alexis.king@gmail.com</a
+                    >
+                  </p>
+                </div>
+                <div class="content-item">
+                  <h5 class="h5">Rules</h5>
+                  <p class="p">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
+                </div>
+                <div class="content-item">
+                  <h5 class="h5">Disclaimer</h5>
+                  <a href="#" class="link -bold -underline-none"
+                    >Show London Escaped Disclaimer</a
+                  >
+                </div>
+                <div class="content-item">
+                  <a href="#" class="link -bold -underline-none"
+                    >Print details</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-6 col-md-3 footer__col">
+            <h5 class="footer__title">Company</h5>
+            <a href="#" class="footer__link">Gift Card</a>
+            <a href="#" class="footer__link">About us</a>
+            <a href="#" class="footer__link">Contact</a>
+            <a href="#" class="footer__link">Terms and Conditions</a>
+            <a href="#" class="footer__link">Privacy Policy</a>
+            <a href="#" class="footer__link">Cancellation Policy</a>
+          </div>
+          <div class="col-6 col-md-3 footer__col">
+            <h5 class="footer__title">Support</h5>
+            <a href="#" class="footer__link">FAQ</a>
+            <a href="#" class="footer__link">Knowledge Base</a>
+            <a href="#" class="footer__link">Suggest a Feature</a>
+          </div>
+          <div class="col-6 col-md-3 footer__col">
+            <h5 class="footer__title">Business</h5>
+            <a href="#" class="footer__link">Blog</a>
+            <a href="#" class="footer__link">Directory</a>
+            <a href="#" class="footer__link">Add Your Escape Room</a>
+            <a href="#" class="footer__link">Pricing</a>
+            <a href="#" class="footer__link">API</a>
+          </div>
+          <div class="col-6 col-md-3 footer__col">
+            <h5 class="footer__title">Locations</h5>
+            <a href="#" class="footer__link">London</a>
+            <a href="#" class="footer__link">Liverpool</a>
+            <a href="#" class="footer__link">Tallinn</a>
+            <a href="#" class="footer__link">Helsinki</a>
+            <a href="#" class="footer__link">Dubai</a>
+            <a href="#" class="footer__link">See all locations</a>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <nav class="menu-socials">
+          <a href="#"><img src="./img/icons/Facebook.svg" class="fb" alt=""/></a>
+          <a href="#"
+            ><img src="./img/icons/Twitter.svg" height="22px" alt=""
+          /></a>
+          <a href="#"><img src="./img/icons/Instagram.svg" alt=""/></a>
+        </nav>
+      </div>
+    </footer>
+
+    <!-- <script src="js/common.js"></script> -->
+    <script src="./js/main.bundle.js"></script>
+  </body>
+</html>
